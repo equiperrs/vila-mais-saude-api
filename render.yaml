@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: vila-mais-saude-api
+    runtime: python
+    plan: free
+    buildCommand: "echo 'Sem dependencias Python externas'"
+    startCommand: python server.py
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: COOKIE_SECURE
+        value: "1"
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
